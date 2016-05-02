@@ -1,4 +1,4 @@
-require 'super_memo'
+#require 'super_memo'
 
 class Card < ActiveRecord::Base
   belongs_to :user

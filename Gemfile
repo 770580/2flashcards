@@ -24,13 +24,18 @@ gem 'figaro'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog-aws'
-gem 'rails_12factor', group: :production
 gem 'levenshtein'
 gem 'whenever', require: false
 gem 'http_accept_language'
 gem 'routing-filter'
 gem 'rollbar'
 gem 'newrelic_rpm'
+gem 'responders', '~> 2.0'
+
+group :production do
+  gem 'rails_12factor'
+  gem 'puma'
+end
 
 group :development, :test do
   gem 'rspec-rails'
