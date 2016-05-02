@@ -1,5 +1,3 @@
-#require 'super_memo'
-
 class Card < ActiveRecord::Base
   belongs_to :user
   belongs_to :block
