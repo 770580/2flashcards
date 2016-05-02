@@ -1,0 +1,2 @@
+# Это приложение flashcards
+[![Build Status](https://travis-ci.org/770580/2flashcards.svg)](https://travis-ci.org/770580/2flashcards)  [![Code Climate](https://codeclimate.com/github/770580/2flashcards/badges/gpa.svg)](https://codeclimate.com/github/770580/2flashcards)
