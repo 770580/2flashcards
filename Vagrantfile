@@ -64,34 +64,5 @@ Vagrant.configure(2) do |config|
   # Enable provisioning with a shell script. Additional provisioners such as
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
   # documentation for more information about their specific syntax and use.
-  $script = <<-SCRIPT
-  sudo rpm -Uvh http://yum.postgresql.org/9.4/redhat/rhel-7-x86_64/pgdg-centos94-9.4-1.noarch.rpm
-  sudo yum -y install epel-release
-  sudo yum repolist
-  sudo yum -y install postgresql94-server postgresql94-contrib
-  sudo yum -y install libpqxx-devel
-  sudo yum -y install nodejs
-  sudo /usr/pgsql-9.4/bin/postgresql94-setup initdb
-  sudo systemctl enable postgresql-9.4
-  sudo systemctl start postgresql-9.4
-  sudo sed -i \"s/#listen_addresses = 'localhost'/listen_addresses = '*'/" \/var/lib/pgsql/9.4/data/postgresql.conf
-  sudo sed -i \'s/^host [^:]*$/host    all             all'\'             all                     md5/' \/var/lib/pgsql/9.4/data/pg_hba.conf
-  sudo systemctl restart postgresql-9.4.service
-  sudo systemctl enable postgresql-9.4.service
-  sudo -u postgres psql -c "create user pqdev with password '123';"
-  sudo -u postgres psql -c "alter user pqdev with superuser;"
-  cd ~/sync
-  gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
-  \\curl -sSL https://get.rvm.io | bash -s stable
-  source /home/vagrant/.rvm/scripts/rvm
-  echo source ~/.profile >> ~/.bash_profile
-  rvm install 2.1.4
-  echo gem: --no-ri --no-rdoc > ~/.gemrc
-  gem install bundler
-  gem install pg -- --with-pg-config=/usr/pgsql-9.4/bin/pg_config
-  bundle install
-  rake db:create db:migrate
-  bundle exec puma -e development -p 3000 --pidfile tmp/pids/puma.pid -d
-  SCRIPT
-  config.vm.provision "shell", inline: $script, privileged: false
+  config.vm.provision "shell", path: "vagrant.sh", privileged: false
 end
