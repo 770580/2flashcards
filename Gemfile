@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.1.4'
+ruby '2.3.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
@@ -31,6 +31,10 @@ gem 'routing-filter'
 gem 'rollbar'
 gem 'newrelic_rpm'
 gem 'responders', '~> 2.0'
+gem 'rails_admin'
+gem 'rolify'
+gem 'pundit'
+gem "rails_admin_pundit", :github => "masciugo/rails_admin_pundit"
 
 group :production do
   gem 'rails_12factor'
