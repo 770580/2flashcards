@@ -6,6 +6,10 @@ FactoryGirl.define do
     locale 'ru'
     current_block_id ''
 
+    factory :admin do
+        after(:create) {|user| user.add_role(:admin)}
+    end
+
     factory :user_with_one_block_without_cards do
       after(:create) do |user|
         create(:block, user: user)

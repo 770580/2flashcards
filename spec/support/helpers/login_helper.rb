@@ -14,3 +14,10 @@ module LoginHelper
     click_button action
   end
 end
+
+def user_login(user, password = "12345")
+  visit login_path
+  fill_in 'email', with: user.email
+  fill_in 'password', with: password
+  click_button "Войти"
+end
