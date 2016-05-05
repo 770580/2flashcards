@@ -41,9 +41,10 @@ group :production do
   gem 'puma'
 end
 
-group :development, :test do
+group :test do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'factory_girl_rails'
   gem 'database_cleaner'
+  gem "codeclimate-test-reporter", require: nil
 end
