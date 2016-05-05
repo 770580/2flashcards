@@ -7,7 +7,7 @@ FactoryGirl.define do
     current_block_id ''
 
     factory :admin do
-        after(:create) {|user| user.add_role(:admin)}
+      after(:create) { |user| user.add_role(:admin) }
     end
 
     factory :user_with_one_block_without_cards do

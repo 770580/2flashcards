@@ -4,7 +4,7 @@ describe 'Rails Admin' do
   let(:admin_user) { FactoryGirl.create(:admin) }
   let(:normal_user) { FactoryGirl.create(:user, email: "test_normal@test.com") }
 
-  it "if not a login user should be login page" do
+  it "if nobody logged should be login page" do
     visit rails_admin_path
     expect(page).to have_content("Вход")
   end
