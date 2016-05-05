@@ -33,8 +33,6 @@ class ApplicationController < ActionController::Base
     redirect_to main_app.login_path
   end
 
-  private
-
   def permission_denied
     redirect_to main_app.root_path, notice: 'Permission denied'
   end
