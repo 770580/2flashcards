@@ -40,6 +40,7 @@ GEM
     arel (6.0.3)
     bcrypt (3.1.11)
     builder (3.2.2)
+    byebug (8.2.5)
     capybara (2.7.1)
       addressable
       mime-types (>= 1.16)
@@ -273,6 +274,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  byebug
   capybara
   carrierwave
   codeclimate-test-reporter

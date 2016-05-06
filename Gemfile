@@ -40,6 +40,10 @@ group :production do
   gem 'puma'
 end
 
+group :development do
+  gem 'byebug'
+end
+
 group :test do
   gem 'rspec-rails'
   gem 'capybara'
