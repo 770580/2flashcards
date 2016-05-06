@@ -34,7 +34,6 @@ gem 'responders', '~> 2.0'
 gem 'rails_admin'
 gem 'rolify'
 gem 'pundit'
-gem "rails_admin_pundit", :github => "masciugo/rails_admin_pundit"
 
 group :production do
   gem 'rails_12factor'
