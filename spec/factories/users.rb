@@ -3,8 +3,12 @@ FactoryGirl.define do
     email 'test@test.com'
     password '12345'
     password_confirmation '12345'
-    locale 'ru'
+    locale 'en'
     current_block_id ''
+
+    factory :admin do
+      after(:create) { |user| user.add_role(:admin) }
+    end
 
     factory :user_with_one_block_without_cards do
       after(:create) do |user|

@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  rolify
   has_many :cards, dependent: :destroy
   has_many :blocks, dependent: :destroy
   has_many :authentications, dependent: :destroy
@@ -37,7 +38,7 @@ class User < ActiveRecord::Base
     users = User.where.not(email: nil)
     users.each do |user|
       if user.cards.pending.any?
-        CardsMailer.pending_cards_notification(user.email).deliver
+        CardsMailer.pending_cards_notification(user.email).deliver_now
       end
     end
   end

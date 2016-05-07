@@ -19,3 +19,6 @@ config/database.yml
 config/application.yml
 public/uploads/
 /.vagrant
+.rvmrc
+/coverage
+.byebug_history

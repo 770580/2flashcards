@@ -1,5 +1,7 @@
 class ApplicationController < ActionController::Base
+  include Pundit
   protect_from_forgery with: :exception
+  rescue_from Pundit::NotAuthorizedError, with: :permission_denied
   before_action :set_locale
 
   private
@@ -24,5 +26,14 @@ class ApplicationController < ActionController::Base
 
   def default_url_options(options = {})
     { locale: I18n.locale }.merge options
+  end
+
+  def not_authenticated
+    # Make sure that we reference the route from the main app.
+    redirect_to main_app.login_path
+  end
+
+  def permission_denied
+    redirect_to main_app.root_path, notice: 'Permission denied'
   end
 end

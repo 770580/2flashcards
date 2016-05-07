@@ -20,6 +20,7 @@
           <% end %>
           <p class="navbar-text navbar-right">
             <% if current_user %>
+              <%= link_to 'Admin page', rails_admin_path, class: 'navbar-link' if current_user.has_role? :admin %>
               <%= link_to t(:user_profile_label), edit_profile_path(current_user),
                           class: 'navbar-link' %> |
               <%= link_to t(:delete_user_label), user_path(current_user),
