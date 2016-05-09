@@ -34,6 +34,7 @@ gem 'responders', '~> 2.0'
 gem 'rails_admin'
 gem 'rolify'
 gem 'pundit'
+gem 'flickraw'
 
 group :production do
   gem 'rails_12factor'

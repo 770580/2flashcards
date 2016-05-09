@@ -36,6 +36,16 @@ class Dashboard::CardsController < Dashboard::BaseController
     respond_with @card
   end
 
+  def flickr
+    tags = params[:flickr][:flickr_tags]
+    @list = flickr.photos.search(tags: tags)
+    redirect_to flickr_path
+#    respond_to do |format|
+#      format.html
+#      format.js
+#    end
+  end
+
   private
 
   def set_card
@@ -44,6 +54,6 @@ class Dashboard::CardsController < Dashboard::BaseController
 
   def card_params
     params.require(:card).permit(:original_text, :translated_text, :review_date,
-                                 :image, :image_cache, :remove_image, :block_id)
+                                 :image, :image_cache, :remote_image_url, :remove_image, :block_id)
   end
 end

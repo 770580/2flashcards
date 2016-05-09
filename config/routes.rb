@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   filter :locale
 
@@ -20,6 +21,9 @@ Rails.application.routes.draw do
     post 'logout' => 'user_sessions#destroy', :as => :logout
 
     resources :cards
+    resources :flickr
+    post 'flickr_search' => 'flickr#search'
+    
 
     resources :blocks do
       member do
