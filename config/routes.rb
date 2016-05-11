@@ -20,6 +20,7 @@ Rails.application.routes.draw do
     post 'logout' => 'user_sessions#destroy', :as => :logout
 
     resources :cards
+    post 'flickr_search' => 'flickr#search'
 
     resources :blocks do
       member do

@@ -1,0 +1,11 @@
+<div class="form-inline" id="flickr-form">
+  <%= simple_form_for :flickr, url: flickr_search_path, input_html: { class: "form-inline" }, remote: true do |f| %>
+    <%= f.input :flickr_tags, label: 'Что ищем?', id: 'flickr_search' %>
+    <%= f.button :submit, 'Найти' %>
+  <% end %>
+  <% if @list %>
+    <% @list.each do |photo| %>
+      <%= link_to image_tag(FlickRaw.url_n(photo)), '#', class: "flickr-image-link" %>
+    <% end %>
+  <% end %>
+</div>

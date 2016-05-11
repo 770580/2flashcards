@@ -19,5 +19,5 @@ def user_login(user, password = "12345")
   visit login_path
   fill_in 'email', with: user.email
   fill_in 'password', with: password
-  click_button "Войти"
+  click_button I18n.t('log_in_label')
 end
