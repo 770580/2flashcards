@@ -36,16 +36,6 @@ class Dashboard::CardsController < Dashboard::BaseController
     respond_with @card
   end
 
-  def flickr
-    tags = params[:flickr][:flickr_tags]
-    @list = flickr.photos.search(tags: tags)
-    redirect_to flickr_path
-#    respond_to do |format|
-#      format.html
-#      format.js
-#    end
-  end
-
   private
 
   def set_card

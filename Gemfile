@@ -53,4 +53,5 @@ group :test do
   gem "codeclimate-test-reporter", require: nil
   gem 'poltergeist'
   gem 'capybara-screenshot', '1.0.11'
+  gem 'webmock'
 end

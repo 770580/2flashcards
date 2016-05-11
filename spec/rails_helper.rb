@@ -7,7 +7,7 @@ require 'capybara/poltergeist'
 require "codeclimate-test-reporter"
 CodeClimate::TestReporter.start
 Capybara.javascript_driver = :poltergeist
-Capybara.save_path = "#{::Rails.root}/tmp/capybara"
+Capybara.save_and_open_page_path = "./tmp/capybara/"
 
 # Add additional requires below this line. Rails is not loaded until this point!
 

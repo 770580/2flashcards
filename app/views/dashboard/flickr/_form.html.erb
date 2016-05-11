@@ -1,7 +1,7 @@
-<div class="form-group" id="flickr-form">
-  <%= simple_form_for :flickr, url: flickr_search_path, remote: true do |f| %>
-    <%= f.input :flickr_tags, as: :search, id: 'flickr_search' %>
-    <%= f.button :submit, label: 'Search' %>
+<div class="form-inline" id="flickr-form">
+  <%= simple_form_for :flickr, url: flickr_search_path, input_html: { class: "form-inline" }, remote: true do |f| %>
+    <%= f.input :flickr_tags, label: 'Что ищем?', id: 'flickr_search' %>
+    <%= f.button :submit, 'Найти' %>
   <% end %>
   <% if @list %>
     <% @list.each do |photo| %>
