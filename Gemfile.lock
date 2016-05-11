@@ -48,9 +48,9 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
-    capybara-webkit (1.11.1)
-      capybara (>= 2.3.0, < 2.8.0)
-      json
+    capybara-screenshot (1.0.11)
+      capybara (>= 1.0, < 3)
+      launchy
     carrierwave (0.11.1)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
@@ -124,6 +124,8 @@ GEM
     kaminari (0.16.3)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
+    launchy (2.4.3)
+      addressable (~> 2.3)
     levenshtein (0.2.2)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
@@ -289,7 +291,7 @@ PLATFORMS
 DEPENDENCIES
   byebug
   capybara
-  capybara-webkit
+  capybara-screenshot (= 1.0.11)
   carrierwave
   codeclimate-test-reporter
   coffee-rails (~> 4.1.0)

@@ -52,5 +52,5 @@ group :test do
   gem 'database_cleaner'
   gem "codeclimate-test-reporter", require: nil
   gem 'poltergeist'
-  gem 'capybara-webkit'
+  gem 'capybara-screenshot', '1.0.11'
 end
