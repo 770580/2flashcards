@@ -3,7 +3,7 @@ FactoryGirl.define do
     email 'test@test.com'
     password '12345'
     password_confirmation '12345'
-    locale 'en'
+    locale 'ru'
     current_block_id ''
 
     factory :admin do

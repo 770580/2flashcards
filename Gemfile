@@ -34,6 +34,7 @@ gem 'responders', '~> 2.0'
 gem 'rails_admin'
 gem 'rolify'
 gem 'pundit'
+gem 'flickraw-cached'
 
 group :production do
   gem 'rails_12factor'
@@ -50,4 +51,7 @@ group :test do
   gem 'factory_girl_rails'
   gem 'database_cleaner'
   gem "codeclimate-test-reporter", require: nil
+  gem 'poltergeist'
+  gem 'capybara-screenshot', '1.0.11'
+  gem 'webmock'
 end

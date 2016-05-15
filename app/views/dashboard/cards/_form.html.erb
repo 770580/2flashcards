@@ -16,6 +16,22 @@
   </div>
 
   <div class="form-group">
+    <%= f.input :remote_image_url, as: :string, label: 'Image URL', input_html: { class: 'form-control', id: 'card-image' } %>
+  </div>
+
+  <div class="form-group">
+    <a href='#' id='flickr-block-link' class='btn btn-default'>Загрузить из Flickr</a>
+  </div>
+
+  <div id='flickr-block' class="form-group">
+    <div>
+      <input name='flickr_search_input' id='flickr-search-input'>
+      <a href='#' id='flickr-search-link' class='btn btn-default'>Найти во Flickr</a>
+    </div>
+    <div id='flickr-image-grid'></div>
+  </div>
+
+  <div class="form-group">
     <%= f.input :block_id, collection: current_user.blocks.all.order('title'),
                       prompt: 'Выберите колоду', label: 'Колоды',
                       input_html: { class: 'form-control', required: true } %>
