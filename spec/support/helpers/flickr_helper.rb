@@ -13,11 +13,11 @@ def stub_flickr
                     "stat": "ok"
                   }.to_json
 
-  stub_request(:post, 'https://api.flickr.com/services/rest/')
-   .with(body: { method: 'flickr.photos.search', per_page: '10', text: 'test', format: 'json', nojsoncallback: '1' })
-   .to_return(status: 200, body: response_body, headers: {})
+  stub_request(:post, 'https://api.flickr.com/services/rest/').
+    with(body: { method: 'flickr.photos.search', per_page: '10', text: 'test', format: 'json', nojsoncallback: '1' }).
+    to_return(status: 200, body: response_body, headers: {})
 
-  stub_request(:post, 'https://api.flickr.com/services/rest/')
-   .with(body: { method: 'flickr.photos.getRecent', per_page: '10', format: 'json', nojsoncallback: '1' })
-   .to_return(status: 200, body: response_body, headers: {})
+  stub_request(:post, 'https://api.flickr.com/services/rest/').
+    with(body: { method: 'flickr.photos.getRecent', per_page: '10', format: 'json', nojsoncallback: '1' }).
+    to_return(status: 200, body: response_body, headers: {})
 end
